@@ -23,3 +23,8 @@ app.use((req, res, next) => {
 app.use("/api/albums", albumsRouter);
 app.use("/api/artists", artistsRouter);
 app.use("/api/songs", songsRouter);
+
+// Default route
+app.get("/", (req, res) => {
+    res.send("Welcome to the Music Album API!");
+  });
