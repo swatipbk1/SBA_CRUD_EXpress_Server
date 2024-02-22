@@ -18,3 +18,8 @@ app.use((req, res, next) => {
     console.log(`Received a ${req.method} request to ${req.url} at ${time.toLocaleTimeString()}.`);
     next();
   });
+
+  // Routes
+app.use("/api/albums", albumsRouter);
+app.use("/api/artists", artistsRouter);
+app.use("/api/songs", songsRouter);
