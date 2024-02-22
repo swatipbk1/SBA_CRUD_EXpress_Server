@@ -28,3 +28,8 @@ app.use("/api/songs", songsRouter);
 app.get("/", (req, res) => {
     res.send("Welcome to the Music Album API!");
   });
+  
+  // 404 Middleware
+app.use((req, res) => {
+    res.status(404).json({ error: "Resource Not Found" });
+  });
