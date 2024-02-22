@@ -33,3 +33,9 @@ app.get("/", (req, res) => {
 app.use((req, res) => {
     res.status(404).json({ error: "Resource Not Found" });
   });
+
+  // Start the server
+app.listen(port, () => {
+    console.log(`Server listening on port: ${port}.`);
+  });
+  
