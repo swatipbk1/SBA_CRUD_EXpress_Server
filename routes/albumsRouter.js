@@ -32,3 +32,7 @@ router.route("/")
     if (albumIndex !== -1) {
         albums[albumIndex] = { ...albums[albumIndex], ...req.body };
       res.json(albums[albumIndex]);
+    } else {
+        res.status(404).json({ error: "Album not found" });
+      }
+    })
