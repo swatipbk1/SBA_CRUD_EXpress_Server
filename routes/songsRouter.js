@@ -37,7 +37,4 @@ router.route("/")
     if (songIndex !== -1) {
       songs[songIndex] = { ...songs[songIndex], ...req.body };
       res.json(songs[songIndex]);
-    } else {
-      res.status(404).json({ error: "Song not found" });
-    }
-  })
+   
