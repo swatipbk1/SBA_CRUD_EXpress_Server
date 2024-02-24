@@ -28,3 +28,9 @@ router.route("/")
         // Placeholder implementation for updating an artist
         const artistIndex = artists.findIndex((artist) => artist.id === parseInt(req.params.id));
         if (artistIndex !== -1) {
+            artists[artistIndex] = { ...artists[artistIndex], ...req.body };
+            res.json(artists[artistIndex]);
+          } else {
+            res.status(404).json({ error: "Artist not found" });
+          }
+        })
