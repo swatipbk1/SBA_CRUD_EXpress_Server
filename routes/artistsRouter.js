@@ -15,3 +15,5 @@ router.route("/")
   });
   router.route("/:id")
   .get((req, res) => {
+    // Placeholder implementation for fetching a specific artist by ID
+    const artist = artists.find((artist) => artist.id === parseInt(req.params.id));
