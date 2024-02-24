@@ -34,3 +34,8 @@ router.route("/")
             res.status(404).json({ error: "Artist not found" });
           }
         })
+
+        .delete((req, res) => {
+            // Placeholder implementation for deleting an artist
+           
+        
