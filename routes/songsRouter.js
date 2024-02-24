@@ -30,3 +30,14 @@ router.route("/")
         res.status(404).json({ error: "Song not found" });
     }
   })
+
+  .patch((req, res) => {
+    // Placeholder implementation for updating a song
+    const songIndex = songs.findIndex((song) => song.id === parseInt(req.params.id));
+    if (songIndex !== -1) {
+      songs[songIndex] = { ...songs[songIndex], ...req.body };
+      res.json(songs[songIndex]);
+    } else {
+      res.status(404).json({ error: "Song not found" });
+    }
+  })
