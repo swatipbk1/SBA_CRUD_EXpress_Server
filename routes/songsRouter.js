@@ -69,4 +69,18 @@ module.exports = router;
         
         <label for="releaseYear">Release Year:</label>
         <input type="number" id="releaseYear" name="releaseYear" required>
+           
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre" required>
         
+        <button type="submit">Add Album</button>
+    </form>
+
+    <!-- JavaScript for handling form submission -->
+    <script>
+        document.getElementById('addAlbumForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // Collect form data
+            const formData = new FormData(this);
+            
