@@ -55,3 +55,12 @@ router.route("/:id")
   });
 
 module.exports = router;
+
+</head>
+<body>
+    <h1>Latest Albums</h1>
+
+    <!-- Form for adding a new album -->
+    <form id="addAlbumForm">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
