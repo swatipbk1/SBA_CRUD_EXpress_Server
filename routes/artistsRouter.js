@@ -13,3 +13,5 @@ router.route("/")
     artists.push(newArtist);
     res.status(201).json(newArtist);
   });
+  router.route("/:id")
+  .get((req, res) => {
