@@ -30,3 +30,5 @@ router.route("/")
     // Placeholder implementation for updating an album
     const albumIndex = albums.findIndex((album) => album.id === parseInt(req.params.id));
     if (albumIndex !== -1) {
+        albums[albumIndex] = { ...albums[albumIndex], ...req.body };
+      res.json(albums[albumIndex]);
