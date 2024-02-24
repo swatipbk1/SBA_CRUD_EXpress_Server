@@ -15,6 +15,7 @@ router.route("/")
     albums.push(newAlbum);
     res.status(201).json(newAlbum);
   });
+
   router.route("/:id")
   .get((req, res) => {
     // Placeholder implementation for fetching a specific album by ID
@@ -25,4 +26,4 @@ router.route("/")
       res.status(404).json({ error: "Album not found" });
     }
   })
-  
+  .patch((req, res) => {
