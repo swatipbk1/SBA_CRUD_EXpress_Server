@@ -28,3 +28,5 @@ router.route("/")
   })
   .patch((req, res) => {
     // Placeholder implementation for updating an album
+    const albumIndex = albums.findIndex((album) => album.id === parseInt(req.params.id));
+    if (albumIndex !== -1) {
