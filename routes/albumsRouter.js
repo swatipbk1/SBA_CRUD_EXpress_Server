@@ -27,3 +27,4 @@ router.route("/")
     }
   })
   .patch((req, res) => {
+    // Placeholder implementation for updating an album
