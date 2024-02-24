@@ -27,4 +27,6 @@ router.route("/")
     if (song) {
       res.json(song);
     } else {
-        
+        res.status(404).json({ error: "Song not found" });
+    }
+  })
