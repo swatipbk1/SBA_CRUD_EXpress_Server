@@ -40,3 +40,6 @@ router.route("/")
     .delete((req, res) => {
         // Placeholder implementation for deleting an album
         const albumIndex = albums.findIndex((album) => album.id === parseInt(req.params.id));
+        if (albumIndex !== -1) {
+            const deletedAlbum = albums.splice(albumIndex, 1);
+            res.json(deletedAlbum[0]);
