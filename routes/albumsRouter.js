@@ -43,3 +43,7 @@ router.route("/")
         if (albumIndex !== -1) {
             const deletedAlbum = albums.splice(albumIndex, 1);
             res.json(deletedAlbum[0]);
+        } else {
+            res.status(404).json({ error: "Album not found" });
+          }
+        });
