@@ -64,3 +64,9 @@ module.exports = router;
     <form id="addAlbumForm">
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" required>
+        <label for="artist">Artist:</label>
+        <input type="text" id="artist" name="artist" required>
+        
+        <label for="releaseYear">Release Year:</label>
+        <input type="number" id="releaseYear" name="releaseYear" required>
+        
