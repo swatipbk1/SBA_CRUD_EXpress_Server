@@ -5,7 +5,6 @@ const app = express();
 // Set the path for static files (like CSS)
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -19,4 +18,10 @@ app.get('/', (req, res) => {
         // Add more static data as needed
     ];
     res.render('latestAlbums', { albums }); // Render the latestAlbums.ejs view
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
