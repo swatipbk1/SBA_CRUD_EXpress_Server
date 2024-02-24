@@ -36,3 +36,7 @@ router.route("/")
         res.status(404).json({ error: "Album not found" });
       }
     })
+
+    .delete((req, res) => {
+        // Placeholder implementation for deleting an album
+        const albumIndex = albums.findIndex((album) => album.id === parseInt(req.params.id));
