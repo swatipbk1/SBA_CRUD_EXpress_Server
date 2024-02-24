@@ -7,3 +7,7 @@ const songs = require("../data/songs");
 router.route("/")
   .get((req, res) => {
     let filteredSongs = songs;
+     // Filter songs by genre if genre query parameter is provided
+     if (req.query.genre) {
+        filteredSongs = songs.filter((song) => song.genre && song.genre.toLowerCase() === req.query.genre.toLowerCase());
+      }
