@@ -47,3 +47,5 @@ router.route("/")
             res.status(404).json({ error: "Album not found" });
           }
         });
+
+        module.exports = router;
