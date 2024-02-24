@@ -55,32 +55,3 @@ router.route("/:id")
   });
 
 module.exports = router;
-
-</head>
-<body>
-    <h1>Latest Albums</h1>
-
-    <!-- Form for adding a new album -->
-    <form id="addAlbumForm">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required>
-        <label for="artist">Artist:</label>
-        <input type="text" id="artist" name="artist" required>
-        
-        <label for="releaseYear">Release Year:</label>
-        <input type="number" id="releaseYear" name="releaseYear" required>
-           
-        <label for="genre">Genre:</label>
-        <input type="text" id="genre" name="genre" required>
-        
-        <button type="submit">Add Album</button>
-    </form>
-
-    <!-- JavaScript for handling form submission -->
-    <script>
-        document.getElementById('addAlbumForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-            
-            // Collect form data
-            const formData = new FormData(this);
-            
