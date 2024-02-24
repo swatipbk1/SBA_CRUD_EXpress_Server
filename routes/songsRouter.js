@@ -20,3 +20,11 @@ router.route("/")
     songs.push(newSong);
     res.status(201).json(newSong);
   });
+  router.route("/:id")
+  .get((req, res) => {
+    // Placeholder implementation for fetching a specific song by ID
+    const song = songs.find((song) => song.id === parseInt(req.params.id));
+    if (song) {
+      res.json(song);
+    } else {
+        
