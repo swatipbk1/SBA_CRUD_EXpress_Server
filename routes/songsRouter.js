@@ -41,3 +41,15 @@ router.route("/")
       res.status(404).json({ error: "Song not found" });
     }
   })
+  .delete((req, res) => {
+    // Placeholder implementation for deleting a song
+    const songIndex = songs.findIndex((song) => song.id === parseInt(req.params.id));
+    if (songIndex !== -1) {
+      const deletedSong = songs.splice(songIndex, 1);
+      res.json(deletedSong[0]);
+    } else {
+      res.status(404).json({ error: "Song not found" });
+    }
+  });
+
+module.exports = router;
