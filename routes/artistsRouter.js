@@ -23,3 +23,8 @@ router.route("/")
         res.status(404).json({ error: "Artist not found" });
       }
     })
+
+    .patch((req, res) => {
+        // Placeholder implementation for updating an artist
+        const artistIndex = artists.findIndex((artist) => artist.id === parseInt(req.params.id));
+        if (artistIndex !== -1) {
