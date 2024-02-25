@@ -1,0 +1,111 @@
+<!-- views/latestAlbums.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Albums</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, #ff9eb4, #89a3ff);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        h1 {
+            margin-top: 20px;
+            color: #fff;
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            width: 300px; /* Adjusted width */
+        }
+        form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        form input {
+            width: calc(100% - 22px); /* Adjusted width */
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box; /* Added box-sizing property */
+        }
+        button[type="submit"] {
+            width: 100%; /* Adjusted width */
+            padding: 10px;
+            background-color: #4CAF50; /* Green color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049; /* Darker green color on hover */
+        }
+        #apiResponse {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Latest Albums</h1>
+
+    <!-- Form for interacting with the RESTful API -->
+    <form id="apiForm">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title">
+        <label for="artist">Artist:</label>
+        <input type="text" id="artist" name="artist">
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre">
+        <label for="releaseYear">Release Year:</label>
+        <input type="text" id="releaseYear" name="releaseYear">
+        <label for="albumCover">Album Cover URL:</label>
+        <input type="text" id="albumCover" name="albumCover">
+        <label for="artistId">Artist ID:</label>
+        <input type="text" id="artistId" name="artistId">
+        <label for="releaseDate">Release Date:</label>
+        <input type="date" id="releaseDate" name="releaseDate">
+        <button type="submit">Submit</button> <!-- Submit button added -->
+    </form>
+
+    <div id="apiResponse"></div>
+
+    <script>
+        const form = document.getElementById('apiForm');
+        const responseDiv = document.getElementById('apiResponse');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            try {
+                // Perform API request here
+                const response = await fetch('/api/endpoint', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+                
+                // Display API response
+                responseDiv.textContent = JSON.stringify(data);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
